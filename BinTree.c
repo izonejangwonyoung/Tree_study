@@ -30,21 +30,21 @@ BinNode *search(BinNode *p, const Member *x) {
     }
 
 }
-//
-//BinNode *Add(BinNode *p, const Member *x) {
-//    int cond;
-//    if(p==NULL){
-//        p=AllocBinNode();
-//        setBinNode(p,x,NULL,NULL);
-//    }
-//    else if((cond= MemberNoCmp(x,&p->data))==0)
-//    {
-//        printf("[ERROR] %d는 이미 등록되어있습니다.\n",x->no);
-//    }
-//    else if (cond < 0) {
-//        p->left =Add(p-> left,x);
-//    }
-//    else{
-//        p->right= Add(p->right,x);
-//    }
-//}
+
+BinNode *Add(BinNode *p, const Member *x) {
+    int cond;
+    if(p==NULL){
+        p=AllocBinNode();
+        setBinNode(p,x,NULL,NULL);
+    }
+    else if((cond= MemberNoCmp(x,&p->data))==0)
+    {
+        printf("[ERROR] %d는 이미 등록되어있습니다.\n",x->no);
+    }
+    else if (cond < 0) {
+        p->left =Add(p-> left,x);
+    }
+    else{
+        p->right= Add(p->right,x);
+    }
+}
